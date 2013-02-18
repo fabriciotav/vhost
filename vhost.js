@@ -25,13 +25,12 @@ celula = express();
 // APP :: api.celula.in
 //
 apiCelula = express();
-routesCelula = require('../celula-rest-api/routes').routes(celula);
+routesCelula = require('../celula-rest-api/routes').routes(apiCelula);
 
 // ..........................................................
 // APP :: dev.celula.in
 //
 devCelula = express();
-routesCelula = require('../celula-rest-api/routes').routes(celula);
 
 // ..........................................................
 // APP :: um-a-um.com
