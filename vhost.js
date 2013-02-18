@@ -1,7 +1,8 @@
 var app,
     bhjs,
     celula,
-    dp,
+    apiDP,
+    loadApiDP,
     express,
     sitio,
     um;
@@ -39,7 +40,8 @@ um = express();
 
 // ..........................................................
 // APP :: dadospublicos.org
-dp = express();
+apiDP = express();
+loadApiDP = require('../rest-api/settings').routes(apiDP);
 
 // ..........................................................
 // APP :: sitiodochicao.com.br
@@ -58,7 +60,7 @@ app.use(express.vhost('bhjs.in', bhjs));
 app.use(express.vhost('celula.in', celula));
 app.use(express.vhost('api.celula.in', apiCelula));
 app.use(express.vhost('dev.celula.in', devCelula));
-app.use(express.vhost('dadospublicos.org', dp));
+app.use(express.vhost('api.dadospublicos.org', apiDP));
 app.use(express.vhost('sitiodochicao.com.br', sitio));
 app.use(express.vhost('um-a-um.com', um));
 app.use(express.vhost('valeriatavares.com', valeria));
