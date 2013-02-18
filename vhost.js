@@ -29,10 +29,7 @@ dp = express();
 // ..........................................................
 // APP :: sitiodochicao.com.br
 sitio = express();
-
-sitio.get('/', function(req, res) {
-    res.send('sitiodochicao.com.br');
-});
+routesSitio = require('../Sitio/settings').routes(sitio);
 
 // ..........................................................
 // APP :: bhjs.in
