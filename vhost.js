@@ -51,6 +51,7 @@ routesSitio = require('../Sitio/settings').routes(sitio);
 // ..........................................................
 // APP :: valeriatavares.com
 valeria = express();
+routesValeria = require('../artesanato/settings').routes(valeria);
 
 // ..........................................................
 // MAIN APP
