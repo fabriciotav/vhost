@@ -5,7 +5,8 @@ var app,
     loadApiDP,
     express,
     sitio,
-    um;
+    um,
+    tri;
 
 // ..........................................................
 // NODE MODULES
@@ -54,6 +55,11 @@ valeria = express();
 routesValeria = require('../artesanato/settings').routes(valeria);
 
 // ..........................................................
+// APP :: tri.fabriciotav.org
+tri = express();
+serverTri = require('../tri').server(tri);
+
+// ..........................................................
 // MAIN APP
 app = express();
 
@@ -65,6 +71,7 @@ app.use(express.vhost('api.dadospublicos.org', apiDP));
 app.use(express.vhost('sitiodochicao.com.br', sitio));
 app.use(express.vhost('um-a-um.com', um));
 app.use(express.vhost('valeriatavares.com', valeria));
+app.use(express.vhost('tri.fabriciotav.org', tri));
 
 app.listen(80);
 console.log( "Server started at port 80" );
