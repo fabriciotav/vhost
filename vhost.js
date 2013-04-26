@@ -57,7 +57,7 @@ routesValeria = require('../artesanato/settings').routes(valeria);
 // ..........................................................
 // APP :: tri.fabriciotav.org
 tri = express();
-serverTri = require('../tri/server').server(tri);
+serverTri = require('../tri/off').server(tri);
 
 // ..........................................................
 // MAIN APP
